@@ -3,30 +3,36 @@ import React, { useState } from "react";
 import Header from "../../components/Header";
 import ModalPopup from "../../components/Modal";
 
-function Take(props) {
-  const questions = props.data;
-  const answer = new Array(questions.length);
-  const [visible, setVisible] = useState(false);
+function take(props) {
+  const questions = props.data.finalQuestions;
+  // console.log(questions);
+  const answer = new Array(questions && questions.length);
+  // const [visible, setVisible] = useState(false);
   let correct = 0;
+  var visible = false;
   const validateMarks = () => {
+    if (!props.data) return;
     correct = 0;
     for (var i = 0; i < questions.length; i++) {
       if (questions[i].answer == answer[i]) correct = correct + 1;
     }
-    setVisible(true);
+    visible = true;
+    // setVisible(true);
   };
   return (
     <div>
       <Header />
       {visible ? (
         <ModalPopup
-          message={`You have got ${correct} Questions out of ${questions.length}`}
+          message={`You have got ${correct} Questions out of ${
+            questions && questions.length
+          }`}
         />
       ) : (
         ""
       )}
       <div className="m-5 w-4/5 mx-auto">
-        {questions.length
+        {questions && questions.length
           ? questions.map((question, index) => {
               return (
                 <div className="mb-10" key={index}>
@@ -71,12 +77,11 @@ function Take(props) {
   );
 }
 
-export default Take;
-
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const response = await axios.get("http://localhost:3000/api/getQuestions");
   const data = response.data;
   return {
     props: { data },
   };
 }
+export default take;

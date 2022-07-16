@@ -1,10 +1,10 @@
-import clientPromise from "../../mongodb-config";
+import { db } from "../../firebase-config";
+import { doc, collection, addDoc } from "firebase/firestore";
 
 export default async function Users(req, res) {
   if (req.method === "POST") {
-    const client = await clientPromise;
-    const db = client.db("questions");
-    await db.collection("demo").insertOne({
+    const questionColl = collection(db, "questions");
+    await addDoc(questionColl, {
       title: req.body.title,
       option1: req.body.option1,
       option2: req.body.option2,

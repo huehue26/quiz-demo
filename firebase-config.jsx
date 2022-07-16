@@ -1,14 +1,17 @@
 import firebase from "firebase/compat/app";
 import "firebase/compat/auth";
+import { getFirestore } from "firebase/firestore";
 
 const app = firebase.initializeApp({
-  apiKey: "AIzaSyB0Z8X9aaMkIFYazSgcoVsOKRLrdO90PRs",
-  authDomain: "trial-quiz-d96ba.firebaseapp.com",
-  projectId: "trial-quiz-d96ba",
-  storageBucket: "trial-quiz-d96ba.appspot.com",
-  messagingSenderId: "134355121873",
-  appId: "1:134355121873:web:f12dc49204426f0c5e37f0",
+  apiKey: "AIzaSyC3plvq91Orkfi0AS03Myu5_T4mhEdOtAA",
+  authDomain: "quiz-f4df7.firebaseapp.com",
+  projectId: "quiz-f4df7",
+  storageBucket: "quiz-f4df7.appspot.com",
+  messagingSenderId: "249198349069",
+  appId: "1:249198349069:web:2dc309b25b3e2fdbc0fe44",
+  measurementId: "G-YJM2T6HE9J",
 });
 
 export const auth = app.auth();
 export const googleAuth = new firebase.auth.GoogleAuthProvider();
+export const db = getFirestore();

@@ -7,11 +7,13 @@ function take(props) {
   const questions = props.data;
   const answer = new Array(questions.length);
   let correct = 0;
+  let visible = false;
   const validateMarks = () => {
     correct = 0;
     for (var i = 0; i < questions.length; i++) {
       if (questions[i].answer == answer[i]) correct = correct + 1;
     }
+    visible = true;
   };
   return (
     <div>

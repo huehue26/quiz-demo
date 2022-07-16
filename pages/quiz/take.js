@@ -1,19 +1,19 @@
 import axios from "axios";
-import React from "react";
+import React, { useState } from "react";
 import Header from "../../components/Header";
 import ModalPopup from "../../components/Modal";
 
-function take(props) {
+function Take(props) {
   const questions = props.data;
   const answer = new Array(questions.length);
+  const [visible, setVisible] = useState(false);
   let correct = 0;
-  let visible = false;
   const validateMarks = () => {
     correct = 0;
     for (var i = 0; i < questions.length; i++) {
       if (questions[i].answer == answer[i]) correct = correct + 1;
     }
-    visible = true;
+    setVisible(true);
   };
   return (
     <div>
@@ -71,9 +71,9 @@ function take(props) {
   );
 }
 
-export default take;
+export default Take;
 
-export async function getStaticProps(context) {
+export async function getStaticProps() {
   const response = await axios.get("http://localhost:3000/api/getQuestions");
   const data = response.data;
   return {

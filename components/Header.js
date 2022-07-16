@@ -12,10 +12,10 @@ const Header = () => {
   };
   return (
     <div>
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <img src="/ideas.png" width="80px" height="80px" alt="" />
         <button
-          class="navbar-toggler"
+          className="navbar-toggler"
           type="button"
           data-toggle="collapse"
           data-target="#navbarText"
@@ -23,29 +23,29 @@ const Header = () => {
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
-          <span class="navbar-toggler-icon"></span>
+          <span className="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarText">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-              <a class="nav-link font-weight-bold" href="#">
-                Home <span class="sr-only">(current)</span>
+        <div className="collapse navbar-collapse" id="navbarText">
+          <ul className="navbar-nav mr-auto">
+            <li className="nav-item active">
+              <a className="nav-link font-weight-bold" href="#">
+                Home <span className="sr-only">(current)</span>
               </a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link font-weight-bold" href="#">
+            <li className="nav-item">
+              <a className="nav-link font-weight-bold" href="#">
                 Features
               </a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link font-weight-bold" href="#">
+            <li className="nav-item">
+              <a className="nav-link font-weight-bold" href="#">
                 Pricing
               </a>
             </li>
           </ul>{" "}
           {currentUser ? (
             <div
-              class="btn  mr-4"
+              className="btn  mr-4"
               type="submit"
               onClick={() => signOutButton()}
             >
@@ -53,7 +53,7 @@ const Header = () => {
             </div>
           ) : (
             <div
-              class="btn  mr-4"
+              className="btn  mr-4"
               type="submit"
               onClick={() => googleLoginHandler()}
             >

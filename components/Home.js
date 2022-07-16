@@ -84,7 +84,7 @@ const Home = () => {
         <section className={styles.title}>
           <div>
             <h1 id="srv">Services</h1>
-            <p>Don't be busy, be productive</p>
+            <p>Dont be busy, be productive</p>
           </div>
         </section>
 

@@ -1,19 +1,17 @@
 import axios from "axios";
-import React, { useState, useEffect } from "react";
+import React from "react";
 import Header from "../../components/Header";
 import ModalPopup from "../../components/Modal";
 
 function take(props) {
   const questions = props.data;
   const answer = new Array(questions.length);
-  const [visible, setVisible] = useState(false);
   let correct = 0;
   const validateMarks = () => {
     correct = 0;
     for (var i = 0; i < questions.length; i++) {
       if (questions[i].answer == answer[i]) correct = correct + 1;
     }
-    setVisible(true);
   };
   return (
     <div>

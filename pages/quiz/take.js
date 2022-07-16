@@ -78,7 +78,9 @@ function take(props) {
 }
 
 export async function getServerSideProps() {
-  const response = await axios.get("http://localhost:3000/api/getQuestions");
+  const response = await axios.get(
+    "https://quiz-demo-neon.vercel.app/api/getQuestions"
+  );
   const data = response.data;
   return {
     props: { data },

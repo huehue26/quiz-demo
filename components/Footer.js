@@ -7,10 +7,6 @@ const Footer = () => {
       <div className="container">
         <footer className="row row-cols-5 py-5 my-5 border-top">
           <div className="col">
-            <Link
-              href="/"
-              className="d-flex align-items-center mb-3 link-dark text-decoration-none"
-            ></Link>
             <p className="text-muted">© 2021</p>
           </div>
 
